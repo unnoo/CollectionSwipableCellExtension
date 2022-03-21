@@ -43,7 +43,7 @@ open class CollectionSwipableCellOneButtonLayout: NSObject, CollectionSwipableCe
         self.direction = direction
         self.fullOpenInset = fullOpenInset
 
-        button.setTitle(kButtonDefaultTitle, for: .normal)
+        //button.setTitle(kButtonDefaultTitle, for: .normal)
     }
 
     open func setupActionsView() {
