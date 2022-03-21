@@ -127,9 +127,10 @@ extension CollectionSwipableCellHandler: UIGestureRecognizerDelegate {
 
     @objc func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if let gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer {
-            let velocity = gestureRecognizer.velocity(in: collection.view)
+            //let velocity = gestureRecognizer.velocity(in: collection.view)
+            let point = gestureRecognizer.translation(in: collection.view)
 
-            if abs(velocity.y) > abs(velocity.x)  {
+            if abs(point.y) > abs(point.x)  {
                 // vertical scrolling, hide active cell if any
                 closeCellInProgress(animated: true)
 
@@ -146,7 +147,7 @@ extension CollectionSwipableCellHandler: UIGestureRecognizerDelegate {
                     return true
                 }
 
-                return direction == .leftToRight ? velocity.x < 0 : velocity.x > 0
+                return direction == .leftToRight ? point.x < 0 : point.x > 0
             }
 
             return false
