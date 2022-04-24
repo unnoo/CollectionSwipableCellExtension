@@ -67,10 +67,11 @@ open class CollectionSwipableCellOneButtonLayout: NSObject, CollectionSwipableCe
 
         let fullWidth = swipingAreaWidth() - insets.left - insets.right
 
-        actionsView.alpha = width / fullWidth
+        //actionsView.alpha = width / fullWidth
 
         let buttonWidth = actionsView.bounds.width < fullWidth ? fullWidth : actionsView.bounds.width
-        button.frame = CGRect(x: actionsView.bounds.width - buttonWidth, y: 0, width: buttonWidth, height: actionsView.bounds.height)
+        //button.frame = CGRect(x: actionsView.bounds.width - buttonWidth, y: 0, width: buttonWidth, height: actionsView.bounds.height)
+        button.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: actionsView.bounds.height)
     }
 
     open func cellDidFullOpen() {
