@@ -8,7 +8,7 @@
 
 import UIKit
 
-private var kSwipableHandlerAssociatedKey = "swipableHandler"
+private var kSwipableHandlerAssociatedKey: UInt8 = 0
 
 public extension UITableViewCell {
 
@@ -21,7 +21,7 @@ public extension UITableViewCell {
 
     internal var swipableHandlerWrapper: SwipableHandlerWrapper? {
         set {
-            objc_setAssociatedObject(self, &kSwipableHandlerAssociatedKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &kSwipableHandlerAssociatedKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
             return objc_getAssociatedObject(self, &kSwipableHandlerAssociatedKey) as? SwipableHandlerWrapper

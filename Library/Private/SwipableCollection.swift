@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SwipableActionsItem: class {
+protocol SwipableActionsItem {
     var view: UIView { get }
     var contentView: UIView { get }
     var linkedViews: [UIView] { get }
@@ -17,7 +17,7 @@ protocol SwipableActionsItem: class {
     func setupSwipableHandler(_ handler: CollectionSwipableCellHandler)
 }
 
-protocol SwipableActionsCollection: class {
+protocol SwipableActionsCollection {
     var view: UIView { get }
     func indexPathForItem(at location: CGPoint) -> IndexPath?
     func item(at indexPath: IndexPath) -> SwipableActionsItem?
